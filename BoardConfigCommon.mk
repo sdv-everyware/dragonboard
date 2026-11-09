@@ -55,6 +55,11 @@ BOARD_SEPOLICY_DIRS += \
     device/linaro/dragonboard/sepolicy \
     system/bt/vendor_libs/linux/sepolicy
 
+# Platform-side policy (coredomain daemons in /system, their file labels).
+# Vendor policy must not define coredomain types or label /system files:
+# treble_labeling_tests enforces this for BOARD_API_LEVEL >= 202604.
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/linaro/dragonboard/sepolicy/system_ext
+
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
   ifeq ($(WITH_DEXPREOPT),)
