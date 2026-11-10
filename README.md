@@ -17,7 +17,7 @@ commit rebased onto the new import.
 
 Our commit, sepolicy: the platform side of the policy (the `tinymix` domain, a coredomain)
 moves from the vendor policy to `sepolicy/system_ext`, listed in
-`SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS`, because the Treble labeling test of the public tree rejects
+`SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS`, because the Treble labeling test rejects
 a coredomain in vendor policy; `libaconfig_storage_read_api_cc.so` gets the
 `same_process_hal_file` label: `libui.so` needs it, and without it a process that loads Linaro's
 prebuilt mesa through the EGL loader finds no OpenGL ES; the libdrm line leaves
